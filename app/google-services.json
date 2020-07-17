@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1012965971894",
+    "firebase_url": "https://messe-cb36d.firebaseio.com",
+    "project_id": "messe-cb36d",
+    "storage_bucket": "messe-cb36d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1012965971894:android:43ecb13c79163cf4639317",
+        "android_client_info": {
+          "package_name": "com.example.messenger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1012965971894-81318s7e1f8575rjq961n92bck8ll5e3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEONsFlqu4XEjTEAXpyS4nIGXUC_rwyxI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1012965971894-81318s7e1f8575rjq961n92bck8ll5e3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
