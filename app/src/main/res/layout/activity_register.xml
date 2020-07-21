@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    tools:context=".RegisterActivity">
+    tools:context=".registerlogin.RegisterActivity">
 
     <EditText
         android:id="@+id/username_edittext_register"
@@ -62,9 +61,9 @@
         android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_button"
         android:text="Sign up"
         android:textColor="@android:color/white"
-        android:background="@drawable/rounded_button"
         app:layout_constraintEnd_toEndOf="@+id/password_edittext_register"
         app:layout_constraintStart_toStartOf="@+id/password_edittext_register"
         app:layout_constraintTop_toBottomOf="@+id/password_edittext_register" />
@@ -96,10 +95,10 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/selectphoto_imageview_register"
-        app:civ_border_width="1dp"
-        app:civ_border_color="@android:color/black"
         android:layout_width="150dp"
         android:layout_height="150dp"
+        app:civ_border_color="@android:color/black"
+        app:civ_border_width="1dp"
         app:layout_constraintBottom_toBottomOf="@+id/selectphoto_button_register"
         app:layout_constraintEnd_toEndOf="@+id/selectphoto_button_register"
         app:layout_constraintStart_toStartOf="@+id/selectphoto_button_register"

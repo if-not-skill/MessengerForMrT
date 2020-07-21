@@ -3,18 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    android:layout_height="match_parent">
 
     <Button
         android:id="@+id/login_button_login"
         android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_button"
         android:paddingLeft="16dp"
         android:text="Sing in"
         android:textColor="@android:color/white"
-        android:background="@drawable/rounded_button"
         app:layout_constraintEnd_toEndOf="@+id/password_edittext_login"
         app:layout_constraintStart_toStartOf="@+id/password_edittext_login"
         app:layout_constraintTop_toBottomOf="@+id/password_edittext_login" />
@@ -54,11 +53,11 @@
         android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_edittext_register_login"
         android:ems="10"
         android:hint="Password"
-        android:paddingLeft="16dp"
         android:inputType="textPassword"
-        android:background="@drawable/rounded_edittext_register_login"
+        android:paddingLeft="16dp"
         app:layout_constraintEnd_toEndOf="@+id/email_editext_login"
         app:layout_constraintStart_toStartOf="@+id/email_editext_login"
         app:layout_constraintTop_toBottomOf="@+id/email_editext_login" />

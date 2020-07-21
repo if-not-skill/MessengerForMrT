@@ -1,12 +1,14 @@
-package com.example.messenger
+package com.example.messenger.messages
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import com.example.messenger.R
+import com.example.messenger.registerlogin.LoginActivity
+import com.example.messenger.registerlogin.RegisterActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.ktx.Firebase
 
 class LatestMessagesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,7 +38,7 @@ class LatestMessagesActivity : AppCompatActivity() {
             R.id.menu_sign_out -> {
                 FirebaseAuth.getInstance().signOut()
 
-                val intent = Intent(this, RegisterActivity::class.java)
+                val intent = Intent(this, LoginActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
                 startActivity(intent)
             }
