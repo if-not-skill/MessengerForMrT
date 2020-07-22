@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.recyclerview.widget.DividerItemDecoration
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 import kotlinx.android.synthetic.main.activity_new_message.*
@@ -16,6 +17,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.squareup.picasso.Picasso
 import com.xwray.groupie.Item
+import kotlinx.android.synthetic.main.activity_latest_messeges.*
 import kotlinx.android.synthetic.main.user_row_new_message.view.*
 
 
@@ -56,6 +58,7 @@ class NewMessageActivity : AppCompatActivity() {
 
                     finish()
                 }
+                recycleview_new_message.addItemDecoration(DividerItemDecoration(this@NewMessageActivity, DividerItemDecoration.VERTICAL))
 
                 recycleview_new_message.adapter = adapter
             }

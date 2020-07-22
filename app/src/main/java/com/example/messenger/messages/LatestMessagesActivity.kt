@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.messenger.R
 import com.example.messenger.models.ChatMessage
 import com.example.messenger.models.LatestMessageRow
@@ -31,6 +32,18 @@ class LatestMessagesActivity : AppCompatActivity() {
         setContentView(R.layout.activity_latest_messeges)
 
         recyclerview_latest_messages.adapter = adapter
+        recyclerview_latest_messages.addItemDecoration(DividerItemDecoration(this,
+        DividerItemDecoration.VERTICAL))
+
+        adapter.setOnItemClickListener{ item, view ->
+            val intent = Intent(this, ChatLogActivity::class.java)
+
+            val row = item as LatestMessageRow
+            row.chatPartnerUser
+
+            intent.putExtra(NewMessageActivity.USER_KEY, row.chatPartnerUser)
+            startActivity(intent)
+        }
 
         listenForLatestMessage()
 
