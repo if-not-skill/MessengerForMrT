@@ -16,10 +16,8 @@ import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 import com.xwray.groupie.Item
 import kotlinx.android.synthetic.main.activity_chat_log.*
+import kotlinx.android.synthetic.main.chat_to_row.view.textview_row
 import kotlinx.android.synthetic.main.chat_from_row.view.*
-import kotlinx.android.synthetic.main.chat_from_row.view.textview_row
-import kotlinx.android.synthetic.main.chat_to_row.view.*
-import kotlinx.android.synthetic.main.chat_from_row.view.imageview_chat_row as imageview_chat_row1
 
 class ChatLogActivity : AppCompatActivity() {
     companion object{
@@ -62,10 +60,10 @@ class ChatLogActivity : AppCompatActivity() {
 
                     if(chatMessage.fromId == FirebaseAuth.getInstance().uid){
                         val currentUser = LatestMessagesActivity.currentUser ?: return
-                        adapter.add(ChatToItem(chatMessage.text, currentUser))
+                        adapter.add(ChatFromItem(chatMessage.text, currentUser))
                         recyclerview_chat_log.scrollToPosition(adapter.itemCount - 1)
                     } else {
-                        adapter.add(ChatFromItem(chatMessage.text, toUser!!))
+                        adapter.add(ChatToItem(chatMessage.text, toUser!!))
                         recyclerview_chat_log.scrollToPosition(adapter.itemCount - 1)
                     }
 
@@ -100,7 +98,6 @@ class ChatLogActivity : AppCompatActivity() {
 
         if(fromId == null) return
 
-//        val reference = FirebaseDatabase.getInstance().getReference("/messages").push()
         val reference = FirebaseDatabase.getInstance().getReference("/user-messages/$fromId/$toId").push()
         val toReference = FirebaseDatabase.getInstance().getReference("/user-messages/$toId/$fromId").push()
 
@@ -116,20 +113,6 @@ class ChatLogActivity : AppCompatActivity() {
 }
 
 
-class ChatFromItem(val text: String, val user : User) : Item<GroupieViewHolder>(){
-    override fun bind(viewHolder: GroupieViewHolder, position: Int) {
-        viewHolder.itemView.textview_row.text = text
-
-        val uri = user.profileImageUrl
-        val targetImageView = viewHolder.itemView.imageview_chat_row
-        Picasso.get().load(uri).into(targetImageView)
-    }
-
-    override fun getLayout(): Int {
-        return R.layout.chat_from_row
-    }
-}
-
 class ChatToItem(val text: String, val user : User) : Item<GroupieViewHolder>(){
     override fun bind(viewHolder: GroupieViewHolder, position: Int) {
         viewHolder.itemView.textview_row.text = text
@@ -141,5 +124,19 @@ class ChatToItem(val text: String, val user : User) : Item<GroupieViewHolder>(){
 
     override fun getLayout(): Int {
         return R.layout.chat_to_row
+    }
+}
+
+class ChatFromItem(val text: String, val user : User) : Item<GroupieViewHolder>(){
+    override fun bind(viewHolder: GroupieViewHolder, position: Int) {
+        viewHolder.itemView.textview_row.text = text
+
+        val uri = user.profileImageUrl
+        val targetImageView = viewHolder.itemView.imageview_chat_row
+        Picasso.get().load(uri).into(targetImageView)
+    }
+
+    override fun getLayout(): Int {
+        return R.layout.chat_from_row
     }
 }
