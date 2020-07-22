@@ -13,15 +13,15 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:background="@drawable/rounded_message_text"
+        android:maxWidth="250dp"
         android:padding="16dp"
         android:text="It's my message asdasdsdfasdfasdfasdfasdf asdasd"
-        android:maxWidth="250dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        app:layout_constraintStart_toEndOf="@+id/imageview_chat_row"
+        app:layout_constraintTop_toTopOf="@+id/imageview_chat_row" />
 
-    <ImageView
-        android:id="@+id/imageView"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageview_chat_row"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
